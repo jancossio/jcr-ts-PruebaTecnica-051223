@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,18 +12,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.Partida;
+import com.example.demo.services.JuegoService;
+import com.example.demo.services.PartiService;
 import com.example.demo.services.PartidaService;
 
 @RestController
 @RequestMapping("/partida")
 public class PartidaController {
 
-
 	@Autowired
 	PartidaService partidaService;
+	@Autowired
+	JuegoService juegoService;
+	@Autowired
+	PartiService partiService;
 	
 	@GetMapping("/all")
 	public List<Partida> listarPartidas(){

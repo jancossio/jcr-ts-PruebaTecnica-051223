@@ -7,10 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.dto.Juego;
 import com.example.demo.dto.User;
 import com.example.demo.dto.UserRecord;
+import com.example.demo.services.PartidaService;
 import com.example.demo.services.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,7 +22,10 @@ import java.util.List;
 public class UserController {
 	@Autowired
     private UserService userService;
-
+	@Autowired
+	PartidaService partidaService;
+	
+	
     @GetMapping("/all")
     public ResponseEntity<List<UserRecord>> getAllUsers(){
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.FOUND);

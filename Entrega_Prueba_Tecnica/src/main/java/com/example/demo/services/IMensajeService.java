@@ -3,6 +3,7 @@ package com.example.demo.services;
 import java.util.List;
 
 import com.example.demo.dto.Mensaje;
+import com.example.demo.dto.Parti;
 
 public interface IMensajeService {
 
@@ -15,4 +16,6 @@ public interface IMensajeService {
 	public Mensaje actualizarMensaje(Mensaje cajero); 
 	
 	public void eliminarMensaje(Integer mensaje);
+	
+	public List<Parti> findLocalidadByNombre(Parti parti);
 }

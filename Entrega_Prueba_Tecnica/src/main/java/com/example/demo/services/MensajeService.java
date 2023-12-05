@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.IMensajeDAO;
 import com.example.demo.dto.Mensaje;
+import com.example.demo.dto.Parti;
 
 @Service
 public class MensajeService implements IMensajeService{
@@ -37,5 +38,11 @@ public class MensajeService implements IMensajeService{
 	@Override
 	public void eliminarMensaje(Integer id) {
 		iMensajeDAO.deleteById(id);
+	}
+	
+	@Override
+	public List<Parti> findLocalidadByNombre(Parti parti) {
+		// TODO Auto-generated method stub
+		return iMensajeDAO.findAllByParti(parti);
 	}
 }
